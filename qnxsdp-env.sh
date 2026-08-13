@@ -15,8 +15,6 @@ QNX_BASE=$(cd "${SCRIPT_DIR}"; pwd)
 if [ ! -d "$QNX_BASE/host" ] || [ ! -d "$QNX_BASE/target" ]; then
 	if [ -d "$QNX_BASE/../qnx800" ]; then
 		QNX_BASE=$(cd "$QNX_BASE/../qnx800"; pwd)
-	elif [ -d "/home/cp/qnx800" ]; then
-		QNX_BASE="/home/cp/qnx800"
 	fi
 fi
 

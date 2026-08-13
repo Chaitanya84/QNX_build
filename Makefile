@@ -1,10 +1,9 @@
-# Makefile for building QNX IFS Image for Raspberry Pi 5
-# Location: /home/cp/QNX_Practice/Makefile
-
 SHELL := /bin/bash
 
-BSP_IMAGES_DIR := /home/cp/qnx800/bsp/BSP_raspberrypi-bcm2712-rpi5_be-800_SVN1024006_JBN381/images
-ENV_SCRIPT     := /home/cp/QNX_Practice/qnxsdp-env.sh
+# Dynamic resolution of workspace directory (relative to this Makefile)
+WORKSPACE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+BSP_IMAGES_DIR := $(abspath $(WORKSPACE_DIR)../qnx800/bsp/BSP_raspberrypi-bcm2712-rpi5_be-800_SVN1024006_JBN381/images)
+ENV_SCRIPT     := $(WORKSPACE_DIR)qnxsdp-env.sh
 
 .PHONY: all clean rebuild help
 
